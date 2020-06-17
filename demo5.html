@@ -7,17 +7,20 @@
     </head>
     <body>
         <textarea></textarea>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.6.3/tinymce.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.3.2/tinymce.min.js"></script>
         <script>
             let dirName = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-            tinymce.PluginManager.load('fontawesome', dirName + '/fontawesome/plugin.js');
+            tinymce.PluginManager.load('fontawesome', dirName + '/plugin.js');
             tinymce.init({
                 selector:'textarea',
-                content_css: 'https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+                content_css: [
+                  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css',
+                ],
                 noneditable_noneditable_class: 'fa',
                 plugins: '-fontawesome noneditable',
                 toolbar: 'fontawesome',
                 extended_valid_elements: 'span[*]'
+
             });
         </script>
     </body>
